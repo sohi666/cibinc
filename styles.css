@@ -126,8 +126,19 @@ body {
     animation-fill-mode: forwards;
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    animation: fadeInUp 1s ease 0.4s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
 .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     padding: 1rem 2rem;
     background: var(--accent-color);
     color: var(--dark-bg);
@@ -135,14 +146,21 @@ body {
     border-radius: 30px;
     font-weight: 600;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 1s ease 0.4s;
-    opacity: 0;
-    animation-fill-mode: forwards;
 }
 
-.cta-button:hover {
+.expense-tracker-btn {
+    background: var(--primary-color);
+    color: var(--text-primary);
+}
+
+.expense-tracker-btn:hover {
+    background: var(--secondary-color);
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 159, 253, 0.3);
+}
+
+.expense-tracker-btn i {
+    font-size: 1.2rem;
 }
 
 /* About Section */
@@ -299,6 +317,17 @@ body {
 
     .hero p {
         font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
     }
 }
 
