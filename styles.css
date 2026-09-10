@@ -631,3 +631,158 @@ body {
         height: 300px;
     }
 } 
+/* ==========================================================================
+   Jade Finance support page (support.html)
+   Prefixed classes so nothing here reaches the other pages.
+   ========================================================================== */
+
+.support-section {
+    padding: 5rem 0;
+    background: var(--darker-bg);
+}
+
+.support-contact-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 2.5rem;
+    margin-bottom: 3.5rem;
+}
+
+.support-contact-card h2 {
+    margin-bottom: 1rem;
+}
+
+.support-contact-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 60ch;
+}
+
+.support-contact-card .contact-details {
+    margin-top: 2rem;
+}
+
+.support-heading {
+    margin: 3rem 0 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Native <details> — no JS, keyboard accessible, and it survives the site's
+   existing script.js without needing a handler. */
+.support-faq {
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+}
+
+.support-faq summary {
+    padding: 1.15rem 1.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: color 0.3s ease;
+}
+
+.support-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.support-faq summary::after {
+    content: "\f078"; /* chevron-down */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.support-faq[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.support-faq summary:hover,
+.support-faq[open] summary {
+    color: var(--accent-color);
+}
+
+.support-faq summary:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: -2px;
+}
+
+.support-answer {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    max-width: 68ch;
+}
+
+.support-answer p {
+    margin-bottom: 0.9rem;
+}
+
+.support-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.support-answer ul,
+.support-answer ol {
+    margin: 0 0 0.9rem 1.25rem;
+}
+
+.support-answer li {
+    margin-bottom: 0.5rem;
+}
+
+.support-answer strong {
+    color: var(--text-primary);
+}
+
+.support-section a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.support-section a:hover {
+    text-decoration: underline;
+}
+
+.support-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 3rem 0;
+}
+
+.support-links a.cta-button {
+    text-decoration: none;
+}
+
+.support-closing {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .support-section {
+        padding: 3rem 0;
+    }
+
+    .support-contact-card {
+        padding: 1.75rem;
+    }
+
+    .support-faq summary {
+        padding: 1rem 1.15rem;
+    }
+
+    .support-answer {
+        padding: 0 1.15rem 1.15rem;
+    }
+}
