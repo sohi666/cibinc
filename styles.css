@@ -792,23 +792,27 @@ body {
    ========================================================================== */
 
 .product-hero {
-    padding: 9rem 0 4rem;
-    background: radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.09), transparent 62%),
+    /* The navbar is fixed and roughly 78px tall, so the gradient runs under it
+       while the content starts well clear of it. */
+    padding: 12rem 0 5.5rem;
+    background: radial-gradient(circle at 50% 12%, rgba(0, 255, 136, 0.1), transparent 60%),
                 var(--darker-bg);
     text-align: center;
 }
 
 .product-hero-icon {
-    width: 108px;
-    height: 108px;
-    border-radius: 24px;
+    width: 112px;
+    height: 112px;
+    border-radius: 25px;
     box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .product-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.6rem;
+    font-size: 3.1rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
     background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
     -webkit-background-clip: text;
     background-clip: text;
@@ -816,10 +820,11 @@ body {
 }
 
 .product-tagline {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    line-height: 1.75;
     color: var(--text-secondary);
-    max-width: 620px;
-    margin: 0 auto 2rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
 }
 
 .product-badge {
@@ -833,12 +838,13 @@ body {
     border-radius: 100px;
     font-size: 0.85rem;
     font-weight: 500;
-    margin-bottom: 2rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 2.75rem;
 }
 
 .product-actions {
     display: flex;
-    gap: 1rem;
+    gap: 1.15rem;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -846,7 +852,7 @@ body {
 /* --- what it does ------------------------------------------------------- */
 
 .product-section {
-    padding: 4.5rem 0;
+    padding: 6rem 0;
 }
 
 .product-section.alt {
@@ -855,28 +861,31 @@ body {
 
 .product-section h2 {
     font-size: 2.1rem;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
     text-align: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .product-section .section-intro {
     text-align: center;
+    line-height: 1.75;
     color: var(--text-secondary);
-    max-width: 620px;
-    margin: 0 auto 3rem;
+    max-width: 600px;
+    margin: 0 auto 3.5rem;
 }
 
 .product-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
+    gap: 1.75rem;
 }
 
 .product-feature {
     background: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 12px;
-    padding: 1.75rem;
+    padding: 2.1rem 1.9rem;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -888,18 +897,20 @@ body {
 .product-feature i {
     font-size: 1.6rem;
     color: var(--accent-color);
-    margin-bottom: 0.9rem;
+    margin-bottom: 1.15rem;
     display: block;
 }
 
 .product-feature h3 {
-    font-size: 1.12rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.14rem;
+    line-height: 1.4;
+    margin-bottom: 0.7rem;
 }
 
 .product-feature p {
     color: var(--text-secondary);
-    font-size: 0.94rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
     margin: 0;
 }
 
@@ -907,7 +918,7 @@ body {
 
 .product-shots {
     display: flex;
-    gap: 1.5rem;
+    gap: 2.25rem;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -930,7 +941,8 @@ body {
     text-align: center;
     color: var(--text-secondary);
     font-size: 0.88rem;
-    margin-top: 0.85rem;
+    letter-spacing: 0.02em;
+    margin-top: 1.1rem;
 }
 
 /* --- pricing ------------------------------------------------------------ */
@@ -938,7 +950,7 @@ body {
 .product-plans {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 1.75rem;
     max-width: 780px;
     margin: 0 auto;
 }
@@ -947,7 +959,7 @@ body {
     background: var(--card-bg);
     border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 14px;
-    padding: 2rem;
+    padding: 2.4rem 2.1rem;
 }
 
 .product-plan.featured {
@@ -957,14 +969,16 @@ body {
 
 .product-plan h3 {
     font-size: 1.3rem;
-    margin-bottom: 0.35rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.6rem;
 }
 
 .product-price {
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 700;
+    line-height: 1.25;
     color: var(--accent-color);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.35rem;
 }
 
 .product-price span {
@@ -976,7 +990,10 @@ body {
 .product-plan .plan-note {
     color: var(--text-secondary);
     font-size: 0.88rem;
-    margin-bottom: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .product-plan ul {
@@ -987,9 +1004,10 @@ body {
 
 .product-plan ul li {
     color: var(--text-secondary);
-    padding: 0.4rem 0 0.4rem 1.6rem;
+    padding: 0.55rem 0 0.55rem 1.75rem;
     position: relative;
-    font-size: 0.94rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
 }
 
 .product-plan ul li:before {
@@ -999,7 +1017,7 @@ body {
     color: var(--accent-color);
     position: absolute;
     left: 0;
-    top: 0.45rem;
+    top: 0.72rem;
     font-size: 0.8rem;
 }
 
@@ -1007,25 +1025,25 @@ body {
 
 .product-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.15rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 2.5rem;
+    margin-top: 3.5rem;
 }
 
 .product-fineprint {
     text-align: center;
     color: var(--text-secondary);
-    font-size: 0.84rem;
-    max-width: 620px;
-    margin: 2rem auto 0;
-    line-height: 1.7;
+    font-size: 0.85rem;
+    max-width: 600px;
+    margin: 2.5rem auto 0;
+    line-height: 1.9;
 }
 
 /* --- the callout on the home page --------------------------------------- */
 
 .product-callout {
-    padding: 4.5rem 0;
+    padding: 5.5rem 0;
     background: var(--darker-bg);
 }
 
@@ -1045,13 +1063,17 @@ body {
 
 .product-callout-body h2 {
     font-size: 1.9rem;
-    margin-bottom: 0.6rem;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.9rem;
     text-align: left;
 }
 
 .product-callout-body p {
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+    max-width: 56ch;
 }
 
 .product-callout-icon {
@@ -1064,11 +1086,26 @@ body {
 
 @media (max-width: 768px) {
     .product-hero {
-        padding: 7rem 0 3rem;
+        padding: 9.5rem 0 4rem;
     }
 
     .product-hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.25rem;
+    }
+
+    .product-hero-icon {
+        width: 96px;
+        height: 96px;
+        border-radius: 21px;
+        margin-bottom: 1.75rem;
+    }
+
+    .product-tagline {
+        font-size: 1.08rem;
+    }
+
+    .product-section {
+        padding: 4.25rem 0;
     }
 
     .product-shot {
