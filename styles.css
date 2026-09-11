@@ -761,7 +761,15 @@ body {
     margin: 3rem 0;
 }
 
+/* `.support-section a` sets the accent colour and outranks `.cta-button`
+   (0,1,1 beats 0,1,0), which painted green text onto a green button. This
+   selector is 0,2,1 and puts the dark label back. */
 .support-links a.cta-button {
+    color: var(--dark-bg);
+    text-decoration: none;
+}
+
+.support-links a.cta-button:hover {
     text-decoration: none;
 }
 
@@ -1029,6 +1037,10 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 3.5rem;
+}
+
+.product-fineprint a {
+    color: var(--accent-color);
 }
 
 .product-fineprint {
