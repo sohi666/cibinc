@@ -786,3 +786,311 @@ body {
         padding: 0 1.15rem 1.15rem;
     }
 }
+
+/* ==========================================================================
+   Products — Jade Finance
+   ========================================================================== */
+
+.product-hero {
+    padding: 9rem 0 4rem;
+    background: radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.09), transparent 62%),
+                var(--darker-bg);
+    text-align: center;
+}
+
+.product-hero-icon {
+    width: 108px;
+    height: 108px;
+    border-radius: 24px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+    margin-bottom: 1.5rem;
+}
+
+.product-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.6rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.product-tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0 auto 2rem;
+}
+
+.product-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.35);
+    color: var(--accent-color);
+    padding: 0.45rem 1.1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.product-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* --- what it does ------------------------------------------------------- */
+
+.product-section {
+    padding: 4.5rem 0;
+}
+
+.product-section.alt {
+    background: var(--darker-bg);
+}
+
+.product-section h2 {
+    font-size: 2.1rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.product-section .section-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0 auto 3rem;
+}
+
+.product-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-feature {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.product-feature:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 255, 136, 0.3);
+}
+
+.product-feature i {
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    margin-bottom: 0.9rem;
+    display: block;
+}
+
+.product-feature h3 {
+    font-size: 1.12rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-feature p {
+    color: var(--text-secondary);
+    font-size: 0.94rem;
+    margin: 0;
+}
+
+/* --- screenshots -------------------------------------------------------- */
+
+.product-shots {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product-shot {
+    flex: 0 0 240px;
+    max-width: 240px;
+}
+
+.product-shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.5);
+}
+
+.product-shot figcaption {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin-top: 0.85rem;
+}
+
+/* --- pricing ------------------------------------------------------------ */
+
+.product-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.product-plan {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 2rem;
+}
+
+.product-plan.featured {
+    border-color: rgba(0, 255, 136, 0.4);
+    background: linear-gradient(160deg, rgba(0, 255, 136, 0.06), var(--card-bg) 55%);
+}
+
+.product-plan h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.35rem;
+}
+
+.product-price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.2rem;
+}
+
+.product-price span {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.product-plan .plan-note {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin-bottom: 1.4rem;
+}
+
+.product-plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-plan ul li {
+    color: var(--text-secondary);
+    padding: 0.4rem 0 0.4rem 1.6rem;
+    position: relative;
+    font-size: 0.94rem;
+}
+
+.product-plan ul li:before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    font-size: 0.8rem;
+}
+
+/* --- closing links ------------------------------------------------------ */
+
+.product-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+.product-fineprint {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.84rem;
+    max-width: 620px;
+    margin: 2rem auto 0;
+    line-height: 1.7;
+}
+
+/* --- the callout on the home page --------------------------------------- */
+
+.product-callout {
+    padding: 4.5rem 0;
+    background: var(--darker-bg);
+}
+
+.product-callout-inner {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background: linear-gradient(140deg, rgba(0, 255, 136, 0.07), var(--card-bg) 60%);
+    border: 1px solid rgba(0, 255, 136, 0.22);
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+
+.product-callout-body {
+    flex: 1 1 auto;
+}
+
+.product-callout-body h2 {
+    font-size: 1.9rem;
+    margin-bottom: 0.6rem;
+    text-align: left;
+}
+
+.product-callout-body p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.product-callout-icon {
+    flex: 0 0 auto;
+    width: 96px;
+    height: 96px;
+    border-radius: 21px;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .product-hero {
+        padding: 7rem 0 3rem;
+    }
+
+    .product-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .product-shot {
+        flex: 0 0 44%;
+        max-width: 44%;
+    }
+
+    .product-callout-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.75rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .product-callout-body h2 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-shot {
+        flex: 0 0 78%;
+        max-width: 78%;
+    }
+}
