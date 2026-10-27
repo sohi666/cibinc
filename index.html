@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CIBINC - Middleware Consultancy</title>
-    <link rel="stylesheet" href="styles.css?v=20260911b">
+    <link rel="stylesheet" href="styles.css?v=20261027">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
@@ -28,17 +30,38 @@
     </nav>
 
     <header class="hero">
+        <!-- Producers publishing to a broker, the broker fanning out to
+             consumers. Decorative in the accessibility tree, but it is the
+             thing this company is hired to build, drawn instead of claimed. -->
+        <canvas id="flow-canvas" aria-hidden="true"></canvas>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Middleware Modernized</h1>
-            <p>Supporting, Architecting, Migrating & Implementing Middleware Infrastructures</p>
+            <p>Supporting, Architecting, Migrating &amp; Implementing Middleware Infrastructures</p>
             <div class="hero-buttons">
                 <a href="#services" class="cta-button">Explore Our Services</a>
                 <a href="products.html" class="cta-button expense-tracker-btn">
                     <i class="fas fa-gem"></i> Jade Finance
                 </a>
             </div>
+            <!-- These count packets the canvas has really delivered, so the
+                 figures describe this page rather than inventing a statistic
+                 about the business. -->
+            <div class="hero-readout">
+                <div class="readout-item">
+                    <span class="readout-label">Messages delivered</span>
+                    <span class="readout-value" data-readout="delivered">0</span>
+                </div>
+                <div class="readout-item">
+                    <span class="readout-label">In flight</span>
+                    <span class="readout-value" data-readout="lag">0</span>
+                </div>
+                <div class="readout-item">
+                    <span class="readout-label">Broker</span>
+                    <span class="readout-value is-ok">healthy</span>
+                </div>
+            </div>
         </div>
-        <div class="hero-overlay"></div>
     </header>
 
     <main>
