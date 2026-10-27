@@ -571,24 +571,38 @@ p:last-child { margin-bottom: 0; }
     gap: 20px;
 }
 
+/* A sideways strip rather than a grid, because these are the App Store's own
+   images: each already carries its headline, and two of them deliberately run
+   a phone off the frame edge so the set reads as one continuous scene. Shown
+   as separate tiles they look cropped; shown in a row they look like the
+   store. */
 .product-shots {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 24px;
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-bright) transparent;
 }
 
-.product-shot { margin: 0; }
-.product-shot img { width: 100%; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); }
-
-.product-shot figcaption {
-    margin-top: 12px;
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--dim);
-    text-align: center;
+.product-shot {
+    flex: 0 0 auto;
+    width: min(290px, 68vw);
+    margin: 0;
+    scroll-snap-align: start;
 }
+
+.product-shot img {
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface-2);
+}
+
+.product-shots::-webkit-scrollbar { height: 8px; }
+.product-shots::-webkit-scrollbar-track { background: transparent; }
+.product-shots::-webkit-scrollbar-thumb { background: var(--line-bright); border-radius: 999px; }
 
 .product-plans {
     display: grid;
