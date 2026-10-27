@@ -241,7 +241,12 @@ p:last-child { margin-bottom: 0; }
    paints at all, which is why the text sits on its own gradient. */
 #flow-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 
-.hero-overlay {
+/* Scoped to the home page, where it darkens the canvas behind the headline.
+   The interior headers still carry a leftover .hero-overlay div from the old
+   photo-background design, and they set .hero-content to position: static --
+   which cannot take a z-index. Unscoped, this rule painted an opaque gradient
+   straight over their text. */
+.hero .hero-overlay {
     position: absolute;
     inset: 0;
     z-index: 1;
