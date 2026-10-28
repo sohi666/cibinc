@@ -127,24 +127,68 @@
        Contact form
        ---------------------------------------------------------------------- */
 
+    /* This used to call preventDefault, clear the fields and change the button
+       to "Message sent" -- while sending nothing anywhere. Everybody who used
+       it believed they had made contact.
+
+       The site is static (GitHub Pages), so the message goes to the one server
+       in this stack that can send mail. Nothing is claimed until that server
+       says so, and a failure says so too, with the address to use instead:
+       being told to send an email is recoverable, believing a lost message
+       arrived is not. */
     (function contactForm() {
+        var ENDPOINT = 'https://cibinc-expense-tracker-625f796cb62a.herokuapp.com/api/v1/contact';
+        var SUPPORT = 'support@cibinc.ca';
+
         var form = document.getElementById('contactForm');
         if (!form) return;
+        var button = form.querySelector('.submit-btn');
+        var status = document.getElementById('formStatus');
+        if (!button) return;
+
+        function say(message, kind) {
+            if (!status) return;
+            status.textContent = message;
+            status.className = 'form-status is-' + kind;
+            /* The button is what the person just pressed, so moving focus to
+               the message is what gets it read out rather than skipped. */
+            status.setAttribute('tabindex', '-1');
+        }
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            var button = form.querySelector('.submit-btn');
-            if (!button) return;
+
+            var data = {};
+            new FormData(form).forEach(function (value, key) { data[key] = value; });
 
             var original = button.textContent;
-            button.textContent = 'Message sent';
+            button.textContent = 'Sending…';
             button.disabled = true;
-            form.reset();
+            if (status) { status.textContent = ''; status.className = 'form-status'; }
 
-            setTimeout(function () {
+            fetch(ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(function (res) {
+                return res.json().catch(function () { return {}; }).then(function (body) {
+                    if (!res.ok) throw new Error((body.error && body.error.message) || 'Could not send your message.');
+                    return body;
+                });
+            }).then(function () {
+                say('Thanks — your message is on its way. We usually reply within one business day.', 'ok');
+                form.reset();
+            }).catch(function (err) {
+                /* A network failure gives fetch a TypeError with no useful
+                   message, so fall back to something a person can act on. */
+                var detail = err && err.message && err.message !== 'Failed to fetch'
+                    ? err.message
+                    : 'Could not reach the server.';
+                say(detail + ' Please email ' + SUPPORT + ' directly.', 'error');
+            }).then(function () {
                 button.textContent = original;
                 button.disabled = false;
-            }, 3000);
+            });
         });
     }());
 

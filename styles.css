@@ -842,6 +842,22 @@ p:last-child { margin-bottom: 0; }
 
 .submit-btn { justify-self: start; border: 1px solid var(--accent); }
 
+/* Off-screen rather than display:none -- a bot reading the stylesheet can skip
+   a hidden field, and some skip anything display:none. */
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Empty until there is something to say, so it takes no space at rest. */
+.form-status { margin: 0; font-size: .95rem; line-height: 1.5; }
+.form-status:empty { display: none; }
+.form-status.is-ok { color: var(--ok); }
+.form-status.is-error { color: var(--crit); }
+
 .map-container {
     margin-top: 28px;
     border: 1px solid var(--line);

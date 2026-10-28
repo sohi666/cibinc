@@ -96,6 +96,7 @@
                                 <label for="service">Service Interest</label>
                                 <select id="service" name="service" required>
                                     <option value="">Select a Service</option>
+                                    <option value="jade">Jade Finance (the app)</option>
                                     <option value="architecture">Middleware Architecture</option>
                                     <option value="migration">Migration & Implementation</option>
                                     <option value="performance">Performance Optimization</option>
@@ -106,7 +107,19 @@
                                 <label for="message">Message</label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
+                            <!-- Honeypot: hidden from people, filled in by anything
+                                 that completes every input it finds. Not type=hidden,
+                                 which a bot can see is not meant to be filled. -->
+                            <div class="form-honeypot" aria-hidden="true">
+                                <label for="website">Website</label>
+                                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+
                             <button type="submit" class="submit-btn">Send Message</button>
+
+                            <!-- aria-live so the outcome is announced; the button no
+                                 longer pretends to be the confirmation. -->
+                            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
                         </form>
                     </div>
                 </div>
